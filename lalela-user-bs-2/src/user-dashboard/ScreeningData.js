@@ -42,8 +42,8 @@ function ScreeningData(props) {
         <Container>
             <Row className="justify-content-center">User Name</Row>
             <Row className="justify-content-center">
-                <Col>user@email.com</Col>
-                <Col>123 456 789</Col>
+                <Col className="justify-content-center">(email icon) user@email.com</Col>
+                <Col className="justify-content-center">(phone icon) 123 456 789</Col>
             </Row>
         </Container>
 

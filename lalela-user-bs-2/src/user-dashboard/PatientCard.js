@@ -16,6 +16,7 @@ function PatientCard(props) {
     const name = props.patientName;
     const email = props.email;
     const phone = props.phoneNum;
+    const id = props.id;
 
   return (
 
@@ -30,7 +31,7 @@ function PatientCard(props) {
                 </Card.Text>
                 {/* need to make button functional: when clicked on, record will be pulled up */}
 
-                <PatientPopUp patientName={name} patientPhone={phone} patientEmail={email}></PatientPopUp>
+                <PatientPopUp patientName={name} patientPhone={phone} patientEmail={email} patientID={id}></PatientPopUp>
 
 
             </Card.Body>
