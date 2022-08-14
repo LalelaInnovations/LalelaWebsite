@@ -1,0 +1,15 @@
+#footer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.footer-hover:hover {
+    color: black;
+    background-color:rgba(88, 185, 125, 0.334);
+}
+
+
+.footer-btm {
+    margin-top: auto;
+}

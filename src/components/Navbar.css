@@ -1,0 +1,129 @@
+
+.navitem {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-width: 70%;
+  transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out, max-width 3s ease-in-out;
+}
+
+.navitem:hover {
+  justify-content: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.63);
+  font-weight: 700;
+  max-width: 100%;
+}
+
+
+@keyframes width_animation {
+  from {
+    width: 70%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#navbar {
+  background-color: rgba(255, 255, 255, 0.8); 
+  justify-content: center;
+  position: fixed; 
+  top: 1.5%; 
+  width: 96%; 
+  transition: top 0.5s;
+}
+
+#navbar:hover {
+  background-color: rgba(255, 255, 255,0.85); 
+}
+
+.navitem_ul.active {
+  text-decoration: underline;
+  color:rgba(88, 185, 125, 0.334);
+}
+
+#login-btn {
+  width:160px;
+  background-color: rgb(88, 185, 151);
+  color: white;
+  transition: 0.2s;
+}
+
+#login-btn:hover {
+  font-weight: 800;
+
+}
+
+#get_app-btn {
+  width:160px;
+  transition: 0.2s;
+}
+
+#get_app-btn:hover {
+  font-weight: bold;
+}
+
+.gradient::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  border-radius: 8px;
+}
+
+.gradient:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  border-radius: 8px;
+}
+
+.gradient::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: rgba(88, 185, 125, 0.334);
+  z-index: -1;
+  transition: transform .2s ease-in-out;
+  border-radius: 8px;
+}
+
+.gradient {
+  position: relative;
+  border-radius: 8px;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  font-family: system-ui, sans-serif;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}
+
+.appear-nav {
+  animation: fade-In-nav ease-out 1.5s;
+}
+
+@keyframes fade-In-nav {
+  0% { 
+      opacity: 0;
+      transform: translate(0%, 200%); 
+  }
+  100% { 
+      opacity: 1; 
+  }
+}

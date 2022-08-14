@@ -1,0 +1,140 @@
+.title-in {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn0 {
+    0% { 
+        opacity: 0;
+
+        transform: translate(-50%, 100%); 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+.card-in-1 {
+    animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn1 {
+    0% { 
+        opacity: 0;
+
+        transform: translate(-50%, 100%); 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+.card-in-2 {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn2 {
+    0% { 
+        opacity: 0;
+
+        transform: translate(-50%, 100%); 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+.card-in-3 {
+    animation: fadeIn 2.5s;
+}
+
+@keyframes fadeIn3 {
+    0% { 
+        opacity: 0;
+
+        transform: translate(-50%, 100%); 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+.card-in-4 {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn4 {
+    0% { 
+        opacity: 0;
+
+        transform: translate(-50%, 100%); 
+    }
+    100% { 
+        opacity: 1; 
+    }
+}
+
+
+.product_page {
+    background-attachment:fixed;
+
+    position: absolute;
+    
+    min-width: 100vw;
+    min-height: 100vh;
+ 
+    /* z-index: -100; */
+
+    background-image: linear-gradient(120deg, rgba(34, 103, 55, 0.435),rgba(25, 198, 36, 0.468),rgba(90, 195, 144, 0.7),rgba(24, 86, 35, 0.796));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite; 
+    /* top: 50%;
+    left: 50%; */
+       /* width: auto; */
+    /* height: auto; */
+      /* transform:  translateY(-15vh); */
+    /* transition: 1s opacity; */
+
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+#product_page_heading {
+    text-shadow: 1px 1px #d2d2d2;
+}
+
+.top-layer {
+    z-index: 100;
+}
+
+.card-zoom {
+    transition: 200ms;
+}
+
+.card-zoom:hover {
+    transform: scale(1.10);
+}
+
+.btn-close-pos {
+    position:relative;
+    display: flex;
+    /* top: 4.5vh;
+    left: 38vh; */
+    align-items: center;
+    justify-content: center;
+    top: 3vh;
+    transition: 200ms;
+}
+
+.btn-close-pos:hover {
+    transform: rotate(90deg) scale(1.25);
+}

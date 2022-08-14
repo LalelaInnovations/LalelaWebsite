@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="60px" viewBox="0 0 1440 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>background_path@3x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="footer" transform="translate(0.000000, -69.000000)" fill="#EEE7D6">
+            <path d="M1440,69 C1206.86448,96.9551295 969.984708,110.932694 729.36068,110.932694 C488.736651,110.932694 245.616425,96.9551295 0,69 L0,129 L1440,129 L1440,69 Z" id="background_path"></path>
+        </g>
+    </g>
+</svg>

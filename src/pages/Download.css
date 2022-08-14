@@ -1,0 +1,53 @@
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 1s opacity;
+}
+
+#download_card {
+    background-color: rgba(212, 225, 217, 0.489);
+
+    position: relative;
+    top: 25vh;
+    left: 6vw;
+    max-width: 80%;
+    max-height: 50%;
+}
+
+
+
+
+/* div {
+    width: 30vw;
+    height: 30vh;
+    background-color: blue;
+    opacity: 100%;
+  } */
+  
+  
+  /*the fade animations*/
+  
+  @keyframes fade-out {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }

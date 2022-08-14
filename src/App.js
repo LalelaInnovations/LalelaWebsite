@@ -1,41 +1,48 @@
-import logo from './logo.svg';
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import Home from './components/pages/Home.js';
-import About from './components/pages/About.js';
-import Products from './components/pages/Products';
-import Contact from './components/pages/Contact.js';
 import 'bootstrap/dist/css/bootstrap.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navibar from './components/Navibar';
 
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import Product from './pages/Product';
+import Contact from './pages/Contact.js';
+import ContactSubmission from './pages/ContactSubmission';
+import Login from './pages/Login.js';
+import Register from './pages/Register.js';
+import NavbarComponent from './components/Navbar.js';
+import Footer from './components/Footer.js';
+import GetApp from './pages/GetApp';
+import ToS from './pages/ToS';
+import Privacy from './pages/Privacy';
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div className="App">
-      
-          Hi
-      
-    </div>
-  );
-}
-=======
 export default function App() {
-  return (
-    <div>
-      <Navibar></Navibar>
->>>>>>> c889c006801dd872d6c6a9567bdb9524704480bd
 
+  return (
+    <div className='main app'>
     <BrowserRouter>
-      <Routes>
-          <Route path = '/' element = {<Home />} />
-          <Route path = '/About' element = {<About />} />
-          <Route path = '/Products' element = {<Products />} />
-          <Route path = '/Contact' element = {<Contact />} />
-      </Routes>
+        <NavbarComponent></NavbarComponent>
+        <Routes className="page-default">
+          {/* PUBLIC PAGES */}
+            <Route path = '/' element = {<Home />} />
+            <Route path = '/about' element = {<About />} />
+            <Route path = '/products' element = {<Product />} />
+            <Route path = '/contact' element = {<Contact />} />
+            <Route path = '/submission_successful' element = {<ContactSubmission />} />
+            <Route path = '/login' element = {<Login />} />
+            <Route path = '/register' element = {<Register />} />
+            {/* <Route path = '/get_app' element = {<GetApp />}/> */}
+            <Route path = '/privacy' element = {<Privacy />} />
+            <Route path = '/terms_and_conditions' element = {<ToS />} />
+
+            {/* New Routes are added here */}
+
+
+          {/* PRIVATE PAGES */}
+
+        </Routes>
+      <Footer></Footer>
     </BrowserRouter>
-    </div>
+  </div>
   )
 }

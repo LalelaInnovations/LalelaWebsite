@@ -1,0 +1,31 @@
+
+.page-this {
+    background-attachment:fixed;
+
+    position: absolute;
+    
+    min-width: 100vw;
+    min-height: 100vh;
+ 
+    background-image: linear-gradient(120deg, rgba(47, 115, 118, 0.435),rgba(25, 198, 36, 0.468),rgba(108, 148, 214, 0.516),rgba(90, 195, 144, 0.7));
+    background-size: 400% 400%;
+    animation: gradient 10s ease-in-out infinite; 
+}
+
+.card-this {
+    position: relative;
+    top: 25vh;
+    max-width: 40rem;
+}
+
+#return-btn {
+    transition: 200ms;
+}
+
+#return-btn:hover {
+    transform: scale(1.1);
+}
+
+.container > #form {
+    margin-top: 4vh;
+}

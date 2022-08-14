@@ -1,0 +1,24 @@
+.login {
+    width: clamp(400px,40vw, 700px);
+}
+
+#rmbm:active {
+    box-shadow: 1px 1px 1px slategray;
+}
+
+#sign-in-btn:active {
+    box-shadow: 1px 1px 1px slategray;
+}
+
+label {
+    float: left;
+    margin-inline-end: 8px;
+}
+
+#login-logo {
+    max-width: 30%;
+}
+
+#login-card {
+    background-color: rgba(43, 96, 48, 0.01);
+}

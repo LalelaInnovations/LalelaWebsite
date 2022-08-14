@@ -1,0 +1,60 @@
+
+#ins {
+ background-image: linear-gradient(90deg, white, rgba(159, 206, 165, 0.267));
+ transition: 200ms;
+}
+
+#ins:hover {
+  transform: scale(1.03);
+}
+
+
+
+#iden {
+    background-image: linear-gradient(90deg,rgba(159, 206, 165, 0.267),white);
+    transition: 200ms;
+}
+
+#iden:hover {
+  transform: scale(1.03);
+}
+
+.card-mvl {
+  background-image: linear-gradient(0deg, white, rgba(159, 206, 165, 0.267));
+  transition: 200ms;
+}
+
+.card-mvl:hover {
+  transform: scale(1.05);
+}
+
+
+.titles {  
+
+
+}
+
+.hovtext {
+    background: linear-gradient(60deg, rgba(43, 86, 43, 0.931), rgb(59, 155, 129),rgb(94, 198, 96));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: cover;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.trans-text {
+    background: linear-gradient(90deg, rgba(39, 93, 129, 0.34),rgb(59, 155, 129), rgba(43, 86, 43, 0.931)) ;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    /* Below is not needed */
+    background-size: cover;
+  }
+
+.trans-text-rev {
+    background: linear-gradient(90deg, rgb(94, 198, 96), rgba(43, 86, 43, 0.931), rgba(59, 155, 129, 0.65),rgba(39, 93, 129, 0.34)) ;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    /* Below is not needed */
+    background-size: cover;
+  }
