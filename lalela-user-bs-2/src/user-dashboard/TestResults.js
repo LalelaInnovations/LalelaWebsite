@@ -7,7 +7,11 @@ import Col from 'react-bootstrap/Col';
 import ToggleBar from './ToggleBar';
 import TestTable from './TestTable';
 
-function TestResults() {
+function TestResults(props) {
+
+  const tests = props.testData;
+  const patients = props.patientData;
+  console.log(tests); 
 
   return (
     <div>
@@ -20,7 +24,7 @@ function TestResults() {
         </Row>
       </Container>
       <Container>
-        <TestTable tests={TestData} patients={PatientData}/>
+        <TestTable tests={tests} patients={patients}/>
       </Container>
     </div>
   )

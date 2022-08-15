@@ -2,9 +2,9 @@ import {
     collection, addDoc, 
     updateDoc, doc,
     deleteDoc, getDocs,
-    query
+    query, where
  } from "firebase/firestore";
-import { firestore } from '../firebase/firestore';
+import { firestore } from '../firebase/firebase';
 import { User } from '../models/user';
 import { Patient } from '../models/patient';
 
@@ -26,16 +26,18 @@ class PatientService {
             const data = doc.data();
 
             const patient = new Patient(
-                doc.admin,
-                doc.email,
-                doc.idNumb, 
-                doc.isSA,
-                doc.name,
-                doc.phone,
-                doc.surname
+                doc.id, 
+                data.admin,
+                data.email,
+                data.idNumb, 
+                data.isSA,
+                data.name,
+                data.phone,
+                data.surname
             );
+            console.log(patient);
             patients.push(patient);
-        })
+        });
         
         return patients;
     }

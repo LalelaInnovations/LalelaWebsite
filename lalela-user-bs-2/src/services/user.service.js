@@ -26,14 +26,17 @@ class UserService {
 
             const user = new User(
                 doc.accounttype,
+                doc.diagnosticCredits,
                 doc.email, 
                 doc.id,
                 doc.idNumb,
                 doc.isSA,
                 doc.langauge,
+                doc.lastPaymentID,
                 doc.name,
                 doc.passcode,
                 doc.phone,
+                doc.screeningCredits,
                 doc.surname
             );
             users.push(user);

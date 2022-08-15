@@ -1,5 +1,6 @@
 export class Patient {
-    constructor(admin, email, idNumb, isSA, name, phone, surname) {
+    constructor(id, admin, email, idNumb, isSA, name, phone, surname) {
+        this.id = id;
         this.admin = admin;
         this.email = email;
         this.idNumb = idNumb; 

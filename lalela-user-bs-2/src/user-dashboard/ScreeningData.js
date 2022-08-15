@@ -25,7 +25,9 @@ function ScreeningData(props) {
                 </p>
             </Row>
             <Row>
-                <i>Here will appear the chart of screening data.</i>
+                <p>Frequencies: {props.kHzArr}</p>
+                <p>Heard? {props.heard}</p>
+                <p>Passed? {props.passed}</p>
                 {/* {props.passFail} */}
             </Row>
         </Container>

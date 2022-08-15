@@ -1,7 +1,7 @@
 import {
     collection, addDoc,
     updateDoc, doc, 
-    deleteDoc, getDocs, query, QuerySnapshot
+    deleteDoc, getDocs, query, where
 } from "firebase/firestore";
 import { firestore } from '../firebase/firebase';
 import { TestResult } from "../models/testResult";
@@ -16,21 +16,24 @@ class TestService {
         const collectionReference = collection(firestore, this.collection);
         const q = query(collectionReference, where("adminID", "==", user.id));
 
+        const querySnapshot = await getDocs(q);
+
         const tests = [];
 
         querySnapshot.forEach((doc) => {
             const data = doc.data();
 
             const test = new TestResult(
-                doc.adminID,
-                doc.date,
-                doc.feedback,
-                doc.patientTestData,
-                doc.testType,
-                doc.heard,
-                doc.kHzArr,
-                doc.passed,
-                doc.patientID
+                doc.id,
+                data.adminID,
+                data.date,
+                data.feedback,
+                data.patientTestData,
+                data.testType,
+                data.heard,
+                data.kHzArr,
+                data.passed,
+                data.patientID
             );
             tests.push(test);
         });
@@ -44,19 +47,21 @@ class TestService {
 
         const tests = [];
 
+        const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
             const data = doc.data();
 
             const test = new TestResult(
-                doc.adminID,
-                doc.date,
-                doc.feedback,
-                doc.patientTestData, 
-                doc.testType,
-                doc.heard,
-                doc.kHzArr,
-                doc.passed,
-                doc.patientID
+                doc.id,
+                data.adminID,
+                data.date,
+                data.feedback,
+                data.patientTestData, 
+                data.testType,
+                data.heard,
+                data.kHzArr,
+                data.passed,
+                data.patientID
             );
             tests.push(test);
 

@@ -1,5 +1,6 @@
 export class TestResult {
-    constructor(adminID, date, feedback, patientTestData, testType, heard, kHzArr, passed, patientID) {
+    constructor(id, adminID, date, feedback, patientTestData, testType, heard, kHzArr, passed, patientID) {
+        this.id = id;
         this.adminID = adminID;
         this.date = date;
         this.feedback = feedback;

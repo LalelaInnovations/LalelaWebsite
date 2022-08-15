@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import TestPopUp from './TestPopUp';
-import testData from './FakeTestData.json';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+// import testService from '../services/test.service';
 // import Col from 'react-bootstrap/Col';
 
 function PatientPopUp(props) {
@@ -12,6 +12,26 @@ function PatientPopUp(props) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const popupPatient = props.patient;
+
+    const tests = props.tests;
+
+    // const [tests, setTests] = useState([]);
+
+    // useEffect(() => {
+    //     fetchUserTests();
+    // }, []);
+
+    // async function fetchUserTests() {
+    //     try {
+    //         const tests = await testService.readPatientTests(popupPatient);
+    //         setTests(tests);
+    //     } catch(err) {
+    //         console.log(err);
+    //     }
+    // }
+    // console.log(tests);
 
   return (
     <div>
@@ -21,38 +41,29 @@ function PatientPopUp(props) {
 
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{props.patientName}</Modal.Title>
+                <Modal.Title>{props.patient.name} {props.patient.surname}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <p>
-                    <b>Phone: </b>{props.patientPhone} <br></br>
-                    <b>Email:</b> {props.patientEmail} <br></br>
+                    <b>Phone: </b>{props.patient.phone} <br></br>
+                    <b>Email:</b> {props.patient.email} <br></br>
                     <hr></hr>
                     <b>Test History:</b><br></br>
-                    {
-                        testData.map((test) => {
-                            const testData = (test.testType === "Screening Test" ? test.heard : test.patientTestData);
-                            const date = test.date.map((date) => 
-                                (date.month + "/" + date.day + "/" + date.year));
-                            const display = (test.patientID===props.patientID ? 
-                                <TestPopUp
-                                    patientName={props.patientName}
-                                    testData={testData}
-                                    testFeedback={test.feedback}
-                                    testDate={date}
-                                    buttonTitle={test.testType + " on " + date}
-                                    testType={test.testType}
-                                    />
-                                : "");
-
-                            return (
-                                <Container>
-                                    <Row>{display}</Row>
-                                </Container>
-                                )
-
-                        }
-                        )}
+                    {tests.map((test) => {
+                        return (props.patient.id === test.patientID ? 
+                            <TestPopUp
+                                buttonTitle={test.date.month + "/" + test.date.day + "/" + test.date.year}
+                                patientName={props.patient.name + props.patient.surname}
+                                date={test.date.month + "/" + test.date.day + "/" + test.date.year}
+                                testType={test.testType}
+                                testFeedback={test.feedback}
+                                testAudiogram={test.patientTestData}
+                                testkHzArr={test.kHzArr}
+                                testPassed={test.passed}
+                                testHeard={test.heard}
+                            />
+                            : "")
+                    })}
 
                 </p>
             </Modal.Body>
