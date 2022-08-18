@@ -5,7 +5,6 @@ import TestPopUp from './TestPopUp';
 import testData from './FakeTestData.json';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import './PatientPopUp.css'
 
 // import Col from 'react-bootstrap/Col';
 

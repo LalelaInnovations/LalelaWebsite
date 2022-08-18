@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 import PatientPopUp from './PatientPopUp';
-import './PatientSearchBar.css'
-import TestPopUp from './TestPopUp';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import testData from './FakeTestData.json';
-import PatientData from './FakePatientData.json';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import ScreeningData from './ScreeningData';
-import DiagnosticData from './DiagnosticData';
+
 
 
 function PatientSearchBar( {data} ) {
