@@ -26,7 +26,7 @@ function ScreeningData(props) {
             </Row>
             <Row>
                 <i>Here will appear the chart of screening data.</i>
-                {/* {props.passFail} */}
+                {props.passFail}
             </Row>
         </Container>
 

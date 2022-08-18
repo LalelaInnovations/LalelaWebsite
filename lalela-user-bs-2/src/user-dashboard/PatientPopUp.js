@@ -5,9 +5,12 @@ import TestPopUp from './TestPopUp';
 import testData from './FakeTestData.json';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import './PatientPopUp.css'
+
 // import Col from 'react-bootstrap/Col';
 
 function PatientPopUp(props) {
+
     const [ show, setShow ] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -15,9 +18,9 @@ function PatientPopUp(props) {
 
   return (
     <div>
-        <Button variant="dark" onClick={handleShow}>
+        <button variant="dark" onClick={handleShow}>
             VIEW RECORDS
-        </Button>
+        </button>
 
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -35,6 +38,8 @@ function PatientPopUp(props) {
                             const date = test.date.map((date) => 
                                 (date.month + "/" + date.day + "/" + date.year));
                             const display = (test.patientID===props.patientID ? 
+                                (
+
                                 <TestPopUp
                                     patientName={props.patientName}
                                     testData={testData}
@@ -43,6 +48,9 @@ function PatientPopUp(props) {
                                     buttonTitle={test.testType + " on " + date}
                                     testType={test.testType}
                                     />
+                        
+                                )
+                                    
                                 : "");
 
                             return (
