@@ -2,9 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
-import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import './Navbar.css';
 
 export default function NavbarComponent() {

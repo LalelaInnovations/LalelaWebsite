@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './ContactSubmission.css';
 
@@ -16,7 +16,7 @@ export default function ContactSubmission() {
                     You should be recieving an automated email to confirm your message sent. 
                     We will get back to you as soon as possible.
                 </p>
-                <p class="signature">♥️ Lalela Innovations</p>
+                <p class="signature">Lalela Innovations</p>
                 <Link to="/" className="text-center btn btn-primary" id="return-btn">
                     Return to Website
                 </Link>

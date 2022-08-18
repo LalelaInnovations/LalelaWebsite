@@ -3,36 +3,18 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 //TBD Later
 import pic1 from '../assets/created/hearing1.png';
-import pic2 from '../assets/created/hearing2.jpg';
-import pic3 from '../assets/created/hearing3.jpg';
-import pic4 from '../assets/created/user2c.png'
-import pic5 from '../assets/promo/user1.jpeg'
+// import pic2 from '../assets/created/hearing2.jpg';
+// import pic3 from '../assets/created/hearing3.jpg';
+import pic4 from '../assets/created/user2c.png';
+// import pic5 from '../assets/created/user1.jpeg';
 //
 import './About.css'
 
 export default function About() {
-
-  // var fade_state = true;
-  // function fade() {
-
-  //   let div = document.getElementById("download-btn-wrapper");
-  //   let card = document.getElementById("download-page");
-
-  //   if (fade_state === true) {
-  //     div.style.animation = "fade-out 1.5s forwards";
-  //     card.classList.remove("hidden");
-  //     card.style.animation = "fade-in 2s forwards";
-  //     fade_state = false;
-  //   } 
-  // }
-
   return (
-
   <div className='container'>
 
-    <div class="card mb-4 mt-2 border-light" id="ins" 
-    // style="max-width: 540px;"
-    >
+    <div class="card mb-4 mt-5 border-light" id="ins">
       <div class="row g-0">
         <div class="col-md-4">
           <img src={pic1} class="img-fluid rounded-start" alt="..."/>
@@ -78,7 +60,6 @@ export default function About() {
       </div>
     </div>
 
-
     <CardGroup className="my-4 con" id="mvl">
       <Card className="border-light me-3 card-mvl rounded">
         <Card.Body className="">
@@ -108,6 +89,7 @@ export default function About() {
         </Card.Body>
       </Card>
     </CardGroup>
+
   </div> 
   )
 }

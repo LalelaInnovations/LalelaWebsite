@@ -1,2 +1,2 @@
 # LalelaWebsite
-Website repository for iX interns
+Source code for Lalela Innovations' Official Website

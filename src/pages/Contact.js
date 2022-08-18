@@ -81,7 +81,7 @@ export default function Contact(props) {
                   <option value="I-PRLD">Purchasing Individual Preloaded Plan</option>
                   <option value="O-PLAN">Purchasing Organizational Plan</option>
                   <option value="Tech_Support">Tech Support</option>
-                  <option value="Career">Career</option>
+                  <option value="Career">Career Inquiry</option>
                   <option value="Bug_Report">Report Unexpected/Unusual Behavior or Bugs</option>
                 </select>
             </Form.Group>

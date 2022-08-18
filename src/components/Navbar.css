@@ -46,7 +46,7 @@
 
 #login-btn {
   width:160px;
-  background-color: rgb(88, 185, 151);
+  background-color: rgb(131, 192, 176);
   color: white;
   transition: 0.2s;
 }
@@ -114,7 +114,7 @@ body {
   }
 }
 
-.appear-nav {
+/* .appear-nav {
   animation: fade-In-nav ease-out 1.5s;
 }
 
@@ -126,4 +126,4 @@ body {
   100% { 
       opacity: 1; 
   }
-}
+} */

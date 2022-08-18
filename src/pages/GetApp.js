@@ -1,7 +1,7 @@
 import React from 'react'
 import './GetApp.css';
 import QR from '../assets/created/lalelaQR.png'
-import promo from '../assets/promo/Lalela Demo HD720.mp4';
+import promo from '../assets/created/Lalela Demo HD720.mp4';
 
 // App Download Pages
 export default function GetApp() {
@@ -23,7 +23,7 @@ export default function GetApp() {
 return (
   <div className='container'>
     <div>
-        <video autoPlay muted loop poster="blackbg2.jpeg" src={promo}/>
+        <video autoPlay muted loop poster="blackbg2.jpeg" src={promo} className="getAppVideo"/>
     </div>
 
     <div className='pages'>

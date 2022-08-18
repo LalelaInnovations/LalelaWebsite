@@ -1,12 +1,9 @@
 import React, { useState }  from 'react'
-import NavbarComponent from '../components/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './Login.css';
-import { FiMail } from 'react-icons/fi';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import logo from "../assets/design/Lalela Brand_by unscene.co.za/Design_assets/Logos_and_marks/JPG _ PNG/blue_lalela_fullform.png";
+
 
 export default function Login() {
   

@@ -1,7 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import './App.css';
 
 import Home from './pages/Home.js';
 import About from './pages/About.js';
@@ -12,12 +12,11 @@ import Login from './pages/Login.js';
 import Register from './pages/Register.js';
 import NavbarComponent from './components/Navbar.js';
 import Footer from './components/Footer.js';
-import GetApp from './pages/GetApp';
+// import GetApp from './pages/GetApp'; // When app download page is supported
 import ToS from './pages/ToS';
 import Privacy from './pages/Privacy';
 
 export default function App() {
-
   return (
     <div className='main app'>
     <BrowserRouter>
@@ -36,7 +35,6 @@ export default function App() {
             <Route path = '/terms_and_conditions' element = {<ToS />} />
 
             {/* New Routes are added here */}
-
 
           {/* PRIVATE PAGES */}
 

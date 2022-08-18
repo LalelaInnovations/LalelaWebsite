@@ -1,7 +1,6 @@
 @font-face {
-  font-family: "Vision";
-  src: local(Vision), url(./assets/design/Vision/Vision-Thin.woff) format('woff');
-
+  /* font-family: "Vision"; */
+  /* src: local(Vision), url(./assets/design/Vision/Vision-Thin.woff) format('woff'); */
 }
 
 .App {
@@ -35,15 +34,6 @@
 .App-link {
   color: #61dafb;
 }
-/* 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 .page-default {
   height: 90%;
@@ -56,10 +46,3 @@
   justify-content: flex-start;
   flex-grow: 1;
 }
-
-/* 
-#body {
-  height: 100%;
-
-} */
-
