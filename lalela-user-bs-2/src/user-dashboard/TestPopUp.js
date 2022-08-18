@@ -12,11 +12,8 @@ function TestPopUp(props) {
     const handleShow = () => setShow(true);
 
     const name = props.patientName;
-    const testData = props.testData;
+    const date = props.date;
     const testFeedback = props.testFeedback;
-    const date = props.testDate;
-
-    
 
 
   return (
@@ -34,12 +31,14 @@ function TestPopUp(props) {
                     <ScreeningData 
                         patientName={name}
                         testDate={date}
-                        passFail={testData}
+                        kHzArr={props.kHzArr}
+                        heard={props.testHeard}
+                        passed={props.testPassed}
                         testFeedback={testFeedback}
                     /> : 
                     <DiagnosticData 
                         patientName={name}
-                        audiogram={testData}
+                        audiogram={props.testAudiogram}
                         testFeedback={testFeedback}
                 />}
             </Modal.Body>

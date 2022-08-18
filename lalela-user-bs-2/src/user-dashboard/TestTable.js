@@ -4,6 +4,9 @@ import Table from 'react-bootstrap/Table';
 import TestPopUp from './TestPopUp';
 
 export default function TestTable(props) {
+    const tests = props.tests;
+    const patients = props.patients;
+
   return (
     <div>
         <Table striped bordered hover variant="light">
@@ -18,28 +21,46 @@ export default function TestTable(props) {
             <tbody>
 
                 {
-                    props.tests.map((test) => {
+                    tests.map((test) => {
+                        const testInput = [
+                            test.id,
+                            test.adminID,
+                            test.date,
+                            test.feedback,
+                            test.patientTestData,
+                            test.testType,
+                            test.heard,
+                            test.kHzArr,
+                            test.passed,
+                            test.patientID
+                        ];
+                        const date = test.date.month + "/" + test.date.day + "/" + test.date.year;
+                        const name = patients.map((patient) =>
+                            (patient.id === test.patientID ? patient.name + " " + patient.surname : ""));
+                        const patientId = patients.map((patient) => 
+                            (patient.id === test.patientID ? patient.id : "" ));
+                        
 
+
+
+                        // const name = "name";
                         const type = test.testType;
-                        const name = props.patients.map((patient) => 
-                            (patient.patient === test.patientID ? patient.name + " " + patient.surname : ""));
-                        const feedback = test.feedback;
-                        const testData = (test.testType === "Screening Test" ? test.heard : test.patientTestData);
-                        const date = test.date.map((date) => 
-                            (date.month + "/" + date.day + "/" + date.year));
 
                         return (<tr>
                             <td><TestPopUp 
-                                buttonTitle="OPEN"
-                                testType={type}
+                                buttonTitle="OPEN" 
                                 patientName={name}
-                                testFeedback={feedback}
-                                testDate={date}
-                                testData={testData}
+                                date={date} 
+                                testType={test.testType}
+                                testFeedback={test.feedback}
+                                testAudiogram={test.patientTestData}
+                                testkHzArr={test.kHzArr}
+                                testPassed={test.passed}
+                                testHeard={test.heard}
                                 >
                             </TestPopUp></td>
                             <td>{date}</td>                       
-                            <td>{name}</td>
+                            <td>{name}</td>                     
                             <td>{type}</td>
                                 
                             

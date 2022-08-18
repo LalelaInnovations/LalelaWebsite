@@ -10,6 +10,7 @@ import TestPopUp from './TestPopUp';
 import Table from 'react-bootstrap/esm/Table';
 
 function TestResults(props) {
+
   
   const [newFilter, setNewFilter] = useState("all tests")
   const [newData, setNewData] = useState(TestData)
@@ -75,6 +76,9 @@ function TestResults(props) {
     return (
       <div>
 
+
+
+
       <Container className="mt-3 mb-5">
         <Row>
           <Col><h1>Tests</h1></Col>
@@ -88,7 +92,8 @@ function TestResults(props) {
         </Row>
       </Container>
       <Container>
-        {/* <TestTable tests={newData} patients={PatientData}/> */}
+
+
         <div>
         <Table striped bordered hover variant="light">
             <thead>
@@ -138,6 +143,7 @@ function TestResults(props) {
 
         </Table>
     </div>
+
       </Container>
     </div>
     )
