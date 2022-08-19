@@ -7,30 +7,53 @@ import { useNavigate } from 'react-router-dom';
 import { Message } from '../objects/Message';
 import Accordion from 'react-bootstrap/Accordion';
 
+import { collection, addDoc } from "firebase/firestore"; 
+import { firestore } from "../firebase/firebase";
+
+
 // Contact Us Page
 export default function Contact(props) {
   
   const [email, setEmail] = useState("");
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
+  const [subject, setSubject] = useState("");
   const [msg, setMsg] = useState("");
   const [subs, setSubs] = useState(false);
 
+  const [error, setError] = useState("");
+
+
   //When form is submitted
-  function onSubmit(event) {
+  async function onContact(event) {
     event.preventDefault();
-    const message = new Message(email, fName, lName, msg, subs);
+    const message = new Message(email, fName, lName, subject, msg, subs);
+    const date = new Date();
+    const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+    const [hour, minutes] = [date.getHours(), date.getMinutes()];
 
-    // props.newMsg(message);
-    // logs to FireBase + message id
+    try {
+      const docRef = await addDoc(collection(firestore, "UserMessages"), {
+        email: message.email,
+        fName: message.fName,
+        lName: message.lName,
+        subject: message.subject,
+        msg: message.msg,
+        subs: message.subs,
+        time: year + "/" + month + "/" + day + " " + hour + ":" + minutes,
+      });
+      console.log("Document written with ID: ", docRef.id);
+      navBack();
 
+    } catch (err) {
+      console.log(err);
+      setError(err.code + ". Please try again");
+    }
     setEmail("");
     setFName("");
     setLName("");
     setMsg("");
     setSubs("");
-    
-    navBack();
   }
 
   let navigate = useNavigate() 
@@ -56,10 +79,10 @@ export default function Contact(props) {
 
         {/* CONTACT PAGE FORM */}
         <div className='container form' id="form">
-          <Form onSubmit={onSubmit}>
+          <Form onSubmit={onContact}>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Email" autocomplete="email" 
+              <Form.Control type="email" placeholder="Email" autoComplete="email" 
                 onChange={(input) => setEmail(input.target.value)}/>
             </Form.Group>
 
@@ -75,24 +98,24 @@ export default function Contact(props) {
             
 
             <Form.Group className="mb-3">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected value="General_Inquiry">General Inquiry</option>
-                  <option value="I-PSYG">Purchasing Individual Pay-as-you-go Plan</option>
-                  <option value="I-PRLD">Purchasing Individual Preloaded Plan</option>
-                  <option value="O-PLAN">Purchasing Organizational Plan</option>
-                  <option value="Tech_Support">Tech Support</option>
-                  <option value="Career">Career Inquiry</option>
-                  <option value="Bug_Report">Report Unexpected/Unusual Behavior or Bugs</option>
+                <select className="form-select" aria-label="Default select example" onChange={(input) => setSubject(input.target.value)}>
+                  <option defaultValue={"General Inquiry"} value="General Inquiry">General Inquiry</option>
+                  <option value="Purchasing Individual Pay-as-you-go Plan">Purchasing Individual Pay-as-you-go Plan</option>
+                  <option value="Purchasing Individual Preloaded Plan">Purchasing Individual Preloaded Plan</option>
+                  <option value="Purchasing Organizational Plan">Purchasing Organizational Plan</option>
+                  <option value="Tech Support">Tech Support</option>
+                  <option value="Career Inquiry">Career Inquiry</option>
+                  <option value="Bug Report">Report Unexpected/Unusual Behavior or Bugs</option>
                 </select>
             </Form.Group>
         
             <Form.Group className="mb-3" controlId="formMsg">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder='Message to us'
+              <textarea className="form-control" id="exampleFormControlTextarea1" rows="4" placeholder='Message to us'
                 onChange={(input) => setMsg(input.target.value)}/>
             </Form.Group>
         
             <Form.Group className="mb-3 same-line" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" class="form-check-label m-2 checkbox-inline" 
+              <Form.Check type="checkbox" className="form-check-label m-2 checkbox-inline" 
                 label="Subscribe to our mail-list for updates on Lalela Innovations" 
                 onClick={(input)=> setSubs(input.target.checked)}/>
             </Form.Group>

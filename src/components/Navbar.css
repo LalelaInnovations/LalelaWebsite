@@ -4,6 +4,7 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  /* width: 200px; */
   max-width: 70%;
   transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out, max-width 3s ease-in-out;
 }
@@ -18,6 +19,35 @@
 
 
 @keyframes width_animation {
+  from {
+    width: 70%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.navitem-user {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  left: 15px;
+  width: 200px;
+  max-width: 70%;
+  transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out, max-width 3s ease-in-out;
+}
+
+.navitem-user:hover {
+  justify-content: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.63);
+  font-weight: 700;
+  max-width: 100%;
+}
+
+
+@keyframes width_animation_1 {
   from {
     width: 70%;
   }
@@ -45,7 +75,7 @@
 }
 
 #login-btn {
-  width:160px;
+  width:175px;
   background-color: rgb(131, 192, 176);
   color: white;
   transition: 0.2s;

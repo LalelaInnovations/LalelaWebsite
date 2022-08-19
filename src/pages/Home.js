@@ -11,7 +11,7 @@ export default function Home() {
   // }
   return ( 
     <>
-      <div className='container home-top'>
+    <div className='container home-top '>
 
       <div className='table pt-5 '>
         <div className='row'>
@@ -25,67 +25,75 @@ export default function Home() {
             </p>
           </div>
 
+        
+
         </div>
-
-
 
       </div>
        
-  
-        <div>
+        {/* <div>
           Section 1: Main text and animated mock up
-        </div>
-
-        <div>
-        <div class="row ">
-          <div class="col-sm-4">
-            <div class="card border-light">
-              <div class="card-body">
-                <h5 class="card-title">Easy-to-use Hearing Healthcare</h5>
-                <i class="bi bi-file-medical"></i>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-              </div>
-            </div>
+        </div> */}
+         <div className='table pt-3 '>
+        <div className='row'>
+          {/* <div className='col-6'><img src={logo_green}/></div> */}
+          
+          <div className=' col-6'>
+            <p className="fs-2" id="tagline2">
+              Why Lalela?
+            </p>
           </div>
-          <div class="col-sm-4">
-            <div class="card border-light">
-              <div class="card-body">
-                <h5 class="card-title">Private and Secure Database</h5>
-                <i class="bi bi-clipboard2-pulse"></i>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card border-light">
-              <div class="card-body">
-                <h5 class="card-title">On-the-go Convenience</h5>
-                <i class="bi bi-phone"></i>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        </div>
-        <div>
-          Section 4: Full screen video
-        </div>
         
-        <div>
-          Testing
+
+        </div>
+
+        <div className="row" id='card-fade-3'>
+          <div className="col-sm-12 col-lg-4 ">
+            <div className="card border-light home-card1 m-2 super-round-corners">
+              <div className="card-body home-card-text">
+                <h5 className="card-title fs-3 mb-3">Easy-to-use Healthcare</h5>
+                <i className="bi bi-file-medical fs-3"></i>
+                <p className="card-text mt-3">Anyone with minimal training can use Lalela to perform a hearing test and navigate through your private database.</p>
+
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-12 col-lg-4">
+            <div className="card border-light home-card2 m-2">
+              <div className="card-body home-card-text">
+                <h5 className="card-title fs-3 mb-3">Effective Medical-grade Test</h5>
+                <i className="bi bi-clipboard2-pulse fs-3"></i>
+                <p className="card-text mt-3">Lalela has been approved as a Class 2 medical device for hearing screening and testing by SAHPRA.</p>
+
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-12 col-lg-4">
+            <div className="card border-light home-card3 m-2">
+              <div className="card-body home-card-text">
+                <h5 className="card-title fs-3 mb-3">On-the-go Convenience</h5>
+                <i className="bi bi-phone fs-3"></i>
+                <p className="card-text mt-3 ">Lalela was designed to be used in remote settings where services are limited, so it can be used almost anywhere</p>
+
+              </div>
+            </div>
+          </div>
         </div>
 
 
+        </div>
+        {/* <div>
+          Section 4: Full screen video
+        </div> */}
+     
+
+        <div id="home-video">
+          <video autoPlay muted loop poster="blackbg2.jpeg" className="rounded" src={promo}/>
+        </div>
       </div>
             
-      <div className="">
-        <video autoPlay muted loop poster="blackbg2.jpeg" src={promo}/>
-      </div>
+   
       
               
     

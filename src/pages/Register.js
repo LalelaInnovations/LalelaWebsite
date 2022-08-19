@@ -1,16 +1,20 @@
-import React, { useState }  from 'react'
-import NavbarComponent from '../components/Navbar';
+import React, { useState, useEffect }  from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './Login.css';
-import { FiMail } from 'react-icons/fi';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
-export default function Register() {
+import { Profile } from "../common/profile";
+import Spinner from "../common/Spinner";
+import  profileService from "../services/profileService"
+import Alert from "../Alert";
+import { NewUser } from '../objects/NewUser';
+
+export default function Register({ user }) {
 
    
-  const [showPwd, setShowPwd] = useState(false);
+  const [showPwd, setShowPwd] = useState(false); // delete later
   const [pwd, setPwd] = useState("");
 
   const [name, setName] = useState('');
@@ -21,17 +25,86 @@ export default function Register() {
   const [passcode, setPasscode] = useState('');
   const [isSA, setSouthAfrican] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [fetching, setFetching] = useState(false)
+  const [fetching, setFetching] = useState(false);
+  const [error, setError] = useState("");
 
+  const navigate = useNavigate();
+  // const user = new NewUser();
   
-  function onSubmit(event) {
-    event.preventDefault();
+
+  async function onFormSubmit(e) {
+    e.preventDefault();
+    console.log("submitted");
+
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, passcode);
+      console.log(user);
+      saveProfile();
+      navigate("/login");
+    } catch (err) {
+      console.log(err);
+      setError(err.code + ". Please try again");
+    }
   }
+  
+  async function fetchProfile(){
+    setFetching(true);
+    
+    try{
+      const profile = await profileService.readProfile(user);
+      if (profile) {
+        setName(profile.name);
+        setSurname(profile.surname);
+        setIdNumber(profile.idNumb);
+        setLanguage(profile.language);
+        setEmail(profile.email);
+        setPasscode(profile.passcode);
+        setSouthAfrican(profile.isSA);
+        setPhoneNumber(profile.phoneNumber);
+      } 
+      } catch(err) {
+        console.log(err);
+  
+    }
+    setFetching(false);
+  }
+     
+async function saveProfile() {
+    // e.preventDefault();
+
+    const profile = new Profile({
+        id: user.uid,
+        name: name,
+        surname: surname,
+        idNumb: idNumb,
+        language: language,
+        email: email,
+        passcode: passcode,
+        isSA: isSA,
+        phone: phoneNumber
+    });
+
+    try{
+        await profileService.saveProfile(profile)
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+  useEffect(() => {
+    fetchProfile();
+  },[]);
 
   return (
     <div id="login-outer-div">
 
-    <div className="container card px-5 py-2 super-round-corner login" id="login-card">
+{
+      fetching ?
+      <div className="text-center">
+        <Spinner />
+        </div>
+        :
+    <div className="container card px-5 py-2 super-round-corner login bg-white" id="login-card">
 
       <div className='mt-3'>
         <img 
@@ -46,7 +119,7 @@ export default function Register() {
       <div className="text-muted pb-2 fs-5">
         to Lalela Portal
       </div> */}
-      <form className='mt-4' onSubmit={onSubmit}>
+      <form className='mt-4' onSubmit={onFormSubmit}>
       <div className="col-md-6 mb-3">
             <label  className="form-label">
               First Name
@@ -143,23 +216,23 @@ export default function Register() {
 
 
         
-        <div class="row mb-2">
-          <div class="col d-flex justify-content-start">
+        <div className="row mb-2">
+          <div className="col d-flex justify-content-start">
             
           </div>
         </div>
 
-        <button type="button" class="btn btn-primary btn-block mb-3 mt-2 form-control" id='sign-in-btn' disabled={!((email && passcode)&&(idNumb&&phoneNumber))}>
+        <button type="submit" className="btn btn-primary btn-block mb-3 mt-2 form-control" id='sign-in-btn' disabled={!((email && passcode)&&(idNumb&&phoneNumber))}>
           Register
         </button>
 
-        <div class="text-center">
+        <div className="text-center">
           <p>Have an account? <Link to={"/login"}><strong>Log in</strong></Link></p>
         </div>
       </form>
 
     </div>
-
+}
   </div>
-  )
+  );
 }

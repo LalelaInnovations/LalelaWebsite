@@ -18,14 +18,19 @@ h1 {
 }
 
 #home-video { 
+    position: absolute;
+    left: 0px;
+    top: 95vh;
+    width: 100vw;
     /* position: relative;
     top: 50%;
     left: 50%;
     min-width: 100%;
+    
     min-height: 100%;
     width: auto;
     height: auto; */
-    /* z-index: -100; */
+    z-index: -100;
     /* transform: translateX(-50%) translateY(-50%);
     transition: 1s opacity; */
 }
@@ -38,7 +43,7 @@ h1 {
 #tagline {
     color: rgba(131, 192, 176);
     font-weight: bold;
-    animation: fade-in-tag ease-out 400ms;
+    animation: fade-in-tag ease-out 500ms;
     text-align: start;
 }
 
@@ -51,3 +56,98 @@ h1 {
         opacity: 100;
     }
 }
+
+/* #tagline2:before {
+    opacity: 0%;
+} */
+
+#tagline2 {
+    color: rgba(131, 192, 176);
+    font-weight: bold;
+    animation: fade-in-tag2 ease-out 3200ms;
+    /* animation-delay: 2s; */
+    text-align: start;
+}
+
+@keyframes fade-in-tag2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+#card-fade-3 {  
+    animation: fade-in-3 ease-out 4000ms;
+    /* animation-delay: 2s; */
+
+}
+
+@keyframes fade-in-3 {
+    0% {
+        opacity: 0;
+        transform: translateX(-200vw);
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+.home-card1 {
+
+    background-image: linear-gradient(60deg, rgba(117, 143, 131, 0.5),rgb(119, 206, 182,0.5));
+    transition: 200ms;
+}
+.home-card2 {
+
+    background-image: linear-gradient(60deg, rgb(119, 206, 182,0.5) 60%, rgba(121, 185, 167, 0.5));
+    transition: 200ms;
+}
+.home-card3 {
+
+    background-image: linear-gradient(60deg, rgba(121, 185, 167, 0.5),rgba(214, 239, 232, 0.5));
+    transition: 200ms;
+}
+
+.home-card1:hover {
+    transform: scale(1.08);
+}
+.home-card2:hover {
+    transform: scale(1.08);
+}
+.home-card3:hover {
+    transform: scale(1.08);
+}
+
+.home-card-text {
+
+    background: linear-gradient(0deg, rgb(48, 73, 48), rgb(111, 171, 138), rgb(48, 142, 117),rgb(89, 156, 200)) ;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: cover;
+    font-weight: bolder;
+}
+
+.card-text {
+    font-style: italic;
+}
+
+
+
+/* .video-fade-in {
+
+    animation: fade-in-vid ease-out 3200ms;
+
+} */
+
+/* @keyframes fade-in-vid {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 100;
+    }
+} */

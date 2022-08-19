@@ -14,15 +14,15 @@ export default function About() {
   return (
   <div className='container'>
 
-    <div class="card mb-4 mt-5 border-light" id="ins">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src={pic1} class="img-fluid rounded-start" alt="..."/>
+    <div className="card mb-4 mt-5 border-light" id="ins">
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src={pic1} className="img-fluid rounded-start" alt="..."/>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title fs-2 pt-3 trans-text"><strong>Inspiration</strong></h5>
-            <p class="card-text mt-3">
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title fs-2 pt-3 trans-text"><strong>Inspiration</strong></h5>
+            <p className="card-text mt-3">
               Lalela is a disruptive hearing testing
               solution that creates affordable and
               mobile access possible for anyone. <br/><br/>
@@ -34,28 +34,28 @@ export default function About() {
               would otherwise be excluded from
               hearing testing.
               </p>
-            <p class="card-text text-muted"><em>The story everyone should hear.</em></p>
+            <p className="card-text text-muted"><em>The story everyone should hear.</em></p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="card mb-3 border-light" id="iden" 
+    <div className="card mb-3 border-light" id="iden" 
     // style="max-width: 540px;"
     >
-      <div class="row g-0">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title fs-2 pt-4 trans-text-rev"><strong>Identity</strong></h5>
-            <p class="card-text mt-4">
+      <div className="row g-0">
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title fs-2 pt-4 trans-text-rev"><strong>Identity</strong></h5>
+            <p className="card-text mt-4">
               We are sturdy, steadfast, ever-evolving and science-driven. <br/><br/>
               We believe that knowledge is the key to human wellness.
             </p>
-            <p class="card-text text-muted mt-4"><em>Technology Intersects Accessibility</em></p>
+            <p className="card-text text-muted mt-4"><em>Technology Intersects Accessibility</em></p>
           </div>
         </div>
-        <div class="col-md-4">
-          <img src={pic4} class="img-fluid rounded-start" alt="..."/>
+        <div className="col-md-4">
+          <img src={pic4} className="img-fluid rounded-start" alt="..."/>
         </div>
       </div>
     </div>

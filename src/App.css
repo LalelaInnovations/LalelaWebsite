@@ -46,3 +46,29 @@
   justify-content: flex-start;
   flex-grow: 1;
 }
+
+.background-tile {
+  position: relative;
+  overflow: hidden;
+  /* background-image: url("../../public/Media/ear_dark.svg");
+  background-repeat: repeat; */
+}
+
+.background-tile:before {
+  display: block;
+  background: url("../public/Media/tile-logo.png") repeat space;
+  position: absolute;
+  height: 100%;
+  top: -150vh;
+  left: -200vh;
+  width: 300%;
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform-origin:  left center;
+  -moz-transform-origin:  left center;
+  -webkit-transform-origin:  left center;
+  content: "";
+  z-index: -100;
+  opacity: 6%;
+}
