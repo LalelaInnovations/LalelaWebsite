@@ -1,0 +1,23 @@
+.dataResult {
+
+  margin-top: 5px;
+  width: 325px;
+  height: auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: row;
+  margin: 10px
+
+}
+
+p1 {
+  margin: 5px
+
+} 
