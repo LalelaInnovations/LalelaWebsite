@@ -1,0 +1,60 @@
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import ScreeningData from './ScreeningData';
+import DiagnosticData from './DiagnosticData';
+import ChangeButton from './ChangeButton';
+// import TestResult from './TestResult';
+
+function TestPopUp(props) {
+    const [ show, setShow ] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const name = props.patientName;
+    const date = props.date;
+    const testFeedback = props.testFeedback;
+
+
+  return (
+    <div>
+        <Button variant="dark" onClick={handleShow}>
+            {props.buttonTitle}
+        </Button>
+
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title><i>Test ID: {props.testId} <ChangeButton edit="Test ID"/> <br></br> 
+                                Doctor: {props.testDoctor} (user #{props.testAdminId}) <ChangeButton edit="Doctor (enter new user ID)"/> <br></br>
+                                Patient: {props.patientName} (patient #{props.patientId}) <ChangeButton edit="Patient (enter new patient ID)"/> <br></br>
+                                
+                                </i></Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                { props.testType === "Screening Test" ? 
+                    <ScreeningData 
+                        patientName={name}
+                        testDate={date}
+                        kHzArr={props.kHzArr}
+                        heard={props.testHeard}
+                        passed={props.testPassed}
+                        testFeedback={testFeedback}
+                    /> : 
+                    <DiagnosticData 
+                        patientName={name}
+                        audiogram={props.testAudiogram}
+                        testFeedback={testFeedback}
+                />}
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="dark" onClick={handleClose}>
+                    CLOSE
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    </div>
+  );
+}
+
+export default TestPopUp
