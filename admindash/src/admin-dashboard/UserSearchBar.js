@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
-import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
-import PatientPopUp from './PatientPopUp';
-import './SearchBar.css'
-import TestPopUp from './TestPopUp';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import ScreeningData from './ScreeningData';
-import DiagnosticData from './DiagnosticData';
+import React, {useState} from 'react'
+import UserPopUp from './UserPopUp';
+import SearchBar from './SearchBar.css'
+import { MDBInputGroup, MDBInput } from 'mdb-react-ui-kit';
 
-function PatientSearchBar(props) {
-
-    
-
+function UserSearchBar(props) {
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
 
     const handleFilter = (event) => {
         const searchWord = event.target.value;
         setWordEntered(searchWord);
-        const newFilter = props.cardPatient.filter((value) => {
+        const newFilter = props.user.filter((value) => {
             const fullName = value.name + ' ' + value.surname;
             return (
                 value.name.toLowerCase().includes(searchWord.toLowerCase()) ||
@@ -51,20 +41,17 @@ function PatientSearchBar(props) {
 
      {filteredData.length != 0 && (
         <div className="dataResult">
-            {filteredData.slice(0,15).map((patient) => {
+            {filteredData.slice(0,15).map((user) => {
 
                 const users = props.userData;
 
-                const patientAdmin = users.map((user) => {
-                    return (user.id === patient.admin ? user.surname: "")
-                })
 
                 // console.log("patientAdmin: " + patientAdmin)
 
                 return (
                     <div className="dataItem">
-                    <p1>{patient.name + " " + patient.surname}</p1>
-                    <PatientPopUp buttonTitle="VIEW RECORDS" patient={patient} tests={props.tests} doctor={patientAdmin} ></PatientPopUp>
+                    <p1>{user.name + " " + user.surname}</p1>
+                    <UserPopUp user = {user} patients={props.patients} tests={props.tests}  ></UserPopUp>
 
                 
                 </div>
@@ -78,4 +65,4 @@ function PatientSearchBar(props) {
   );
 }
 
-export default PatientSearchBar;
+export default UserSearchBar;

@@ -13,8 +13,6 @@ import Card from 'react-bootstrap/Card';
 
 function PatientCard(props) {
 
-    console.log("Correct cardpatient: " + props.cardPatient);
-
     const name = props.cardPatient.name + " " + props.cardPatient.surname;
 
     const id = props.cardPatient.id;
@@ -24,6 +22,7 @@ function PatientCard(props) {
     const patientAdmin = users.map((user) => {
         return (user.id === props.cardPatient.admin ? user.surname: "")
     })
+
 
   return (
 

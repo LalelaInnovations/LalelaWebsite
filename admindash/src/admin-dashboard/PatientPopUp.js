@@ -16,6 +16,7 @@ function PatientPopUp(props) {
 
     const tests = props.tests;
 
+
   return (
     <div>
         <Button variant="dark" onClick={handleShow}>
